@@ -190,6 +190,22 @@ $theatre=mysqli_fetch_array($th);
             </span>
           </a>
         </li>
+        <li class="treeview">
+          <a href="User_manipulation.php">
+            <i class="fa fa-film"></i> <span>User_manipulation</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+        </li>
+        <li class="treeview">
+          <a href="view_user.php">
+            <i class="fa fa-film"></i> <span>View_user</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+        </li>
         
       </ul>
     </section>

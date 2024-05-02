@@ -101,4 +101,4 @@ include('header.php');
 <?php include('footer.php');?>
 </div>
 
-<!-- !!!?<php include('searchbar.php');?>!!! -->
+<?php include('searchbar.php');?>
