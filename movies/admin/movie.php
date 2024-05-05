@@ -72,7 +72,7 @@
 			</div>
 			<div class="form-group">
 				<label>Release Date</label>
-				<input type="text"  placeholder="dd/mm/yyyy" size="12" class="form-control" name="startdate">
+				<input type="date" class="form-control" name="rdate" required>
 			</div>
 			<div class="form-group">
 				<label>Director Name</label>

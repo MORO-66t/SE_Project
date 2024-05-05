@@ -100,7 +100,7 @@ $row=mysqli_fetch_assoc($sq);
  	$banner=$t.'_'.$_FILES['banner']['name'];
     move_uploaded_file($_FILES['banner']['tmp_name'],'../upload/'.$banner);
 	
-    $q="insert into movies (m_nm,m_date,m_cnm,m_dnm,m_des,m_banner) values ('$mnm','0','$cnm','$dnm','$des','$banner')";
+    $q="insert into movies (m_nm,m_date,m_cnm,m_dnm,m_des,m_banner) values ('$mnm','$rdate','$cnm','$dnm','$des','$banner')";
     mysqli_query($con,$q);
     $_SESSION['done']="Successfully Added";
     header("location: ../admin/movie.php");
@@ -136,7 +136,7 @@ if ($add == 1)
 {
     $mo->addmovie();
 }
-if (!empty($_GET))
+if (!empty($_GET) && $del == 1)
 {
     $mo->del_movie();
 }
