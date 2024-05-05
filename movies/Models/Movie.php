@@ -5,26 +5,28 @@ private $movie_id;
 private $movie_name;
 private $movie_date;
 private $movie_cast;
-private $movie_discreption;
+private $movie_d;
 private $movie_director;
 private $movie_banner;
 private $movie_shows;
 private $movie_active;
 
-public function __construct($id) {
+public function __construct($id=-1) {
+    if($id != -1){
     include("../include/config.php");
     $sq="select *  from movies where m_id=$id ";
 	$res=mysqli_query($con,$sq);
 	$row=mysqli_fetch_assoc($res);
     $this->$movie_id=$id;
-    $movie_name = $row['m_nm'];
-    $movie_date = $row['m_date'];
-    $movie_cast = $row['m_cnm'];
-    $movie_director = $row['m_dnm'];
-    $movie_discreption = $row['m_des'];
-    $movie_banner = $row['m_banner'];
-    $movie_shows = $row['m_shw'];
-    $movie_active = $row['m_status'];
+    $this->$movie_name = $row['m_nm'];
+    $this->$movie_date = $row['m_date'];
+    $this->$movie_cast = $row['m_cnm'];
+    $this->$movie_director = $row['m_dnm'];
+    $this->$movie_d = isset($row['m_des']) ? $row['m_des'] : null;
+    $this->$movie_banner = $row['m_banner'];
+    $this->$movie_shows = $row['m_shw'];
+    $this->$movie_active = $row['m_status'];
+    }
 }
 public function getMovieId() {
     return $this->movie_id;
@@ -47,7 +49,7 @@ public function getMovieDirector() {
 }
 
 public function getMovieDescription() {
-    return $this->movie_description;
+    return $this->movie_d;
 }
 
 public function getMovieBanner() {
