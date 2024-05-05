@@ -1,7 +1,5 @@
 <?php
 include('header.php');
-include('Movie.php');
-$mo= new Movie();
 ?>
   <!-- =============================================== -->
 
@@ -30,8 +28,32 @@ $mo= new Movie();
               <?php include('../../msgbox.php');?>
               <ul class="todo-list">
                  <?php 
-                      $mo->viewMovies();
-                      ?>
+                        $qry7=mysqli_query($con,"select * from tbl_movie");
+                        if(mysqli_num_rows($qry7))
+                        {
+                        while($c=mysqli_fetch_array($qry7))
+                        {
+                        ?>
+                <li>
+                  <!-- drag handle -->
+                      <span class="handle">
+                        <i class="fa fa-film"></i>
+                        
+                      </span>
+                  <!-- checkbox -->
+                  <!-- todo text -->
+                  <span class="text"><?php echo $c['movie_name'];?></span>
+                  <!-- Emphasis label -->
+                  
+                  <!-- General tools such as edit or delete-->
+                  <div class="tools">
+                    
+                    <button class="fa fa-trash-o" onclick="del(<?php echo $c['movie_id'];?>)"></button>
+                  </div>
+                </li>
+                  <?php
+                       }}
+                     ?>
                       
             </div>
           </div>
@@ -46,14 +68,12 @@ $mo= new Movie();
   <?php
 include('../../footer.php');
 ?>
-
 <script>
 function del(m)
     {
         if (confirm("Are you want to delete this movie") == true) 
         {
-
-            window.location="Movie.php?mid="+m;
+            window.location="del_movie.php?mid="+m;
         } 
     }
     </script>
