@@ -50,7 +50,7 @@
 	  <h6 class="m-0 font-weight-bold text-primary">Add New Movie</h6>
 	</div>
 	<div class="card-body">
-		<form action="movie_add.php" method="post" onsubmit="checkForm(this); return false;" name="form" enctype="multipart/form-data">
+		<form action="../Models/Movie.php" method="post" onsubmit="checkForm(this); return false;" name="form" enctype="multipart/form-data">
 			<?php
 			if(isset($_SESSION['done']))
 			{
