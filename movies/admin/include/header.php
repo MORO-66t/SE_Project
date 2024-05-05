@@ -119,7 +119,7 @@ if(!isset($_SESSION['admin']['status']))
           <span>Manage Movies</span>
         </a>  
       </li>
-  <li class="nav-item">
+  <!-- <li class="nav-item">
         <a class="nav-link collapsed" href="movieup.php"  aria-expanded="true" aria-controls="collapseTwo">
           <i class="fas fa-fw fa-film"></i>
           <span>Upcoming Movies</span>
@@ -130,7 +130,7 @@ if(!isset($_SESSION['admin']['status']))
           <i class="fas fa-fw fa-film"></i>
           <span>Manage Upcoming Movies</span>
         </a>  
-      </li>
+      </li> -->
 
     
      <li class="nav-item">

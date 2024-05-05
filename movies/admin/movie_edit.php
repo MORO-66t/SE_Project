@@ -1,10 +1,10 @@
 <?php
 	include("include/header.php");
 	include("../include/config.php");
+	include("../Models/Movie.php");
 	$id=$_GET['id'];
-	$sq="select *  from movies where m_id=$id ";
-	$res=mysqli_query($con,$sq);
-	$row=mysqli_fetch_assoc($res);
+	$movie_ed=new Movie($id);
+
 ?>
 <!-- Begin Page Content -->
 <div class="container-fluid">
@@ -20,35 +20,35 @@
 		<form action="movie_editpro.php" method="post" enctype="multipart/form-data">
 			<div class="form-group">
 				<label>Movie Name</label>
-				<input type="text" class="form-control" name="mnm" value="<?php echo$row['m_nm']; ?>" required>
+				<input type="text" class="form-control" name="mnm" value="<?php echo $movie_ed->getMovieName(); ?>" required>
 			</div>
 			<div class="form-group">
 				<label>Release Date</label>
-				<input type="date" class="form-control" name="rdate" value="<?php echo$row['m_date']; ?>" required>
+				<input type="date" class="form-control" name="rdate" value="<?php echo $movie_ed->getMovieDate(); ?>" required>
 			</div>
 			<div class="form-group">
 				<label>Cast Name</label>
-				<input type="text" class="form-control" name="cnm" value="<?php echo$row['m_cnm']; ?>" required>
+				<input type="text" class="form-control" name="cnm" value="<?php echo $movie_ed->getMovieCast(); ?>" required>
 			</div>
 			<div class="form-group">
 				<label>Director Name</label>
-				<input type="text" class="form-control" name="dnm" value="<?php echo$row['m_dnm']; ?>" required>
+				<input type="text" class="form-control" name="dnm" value="<?php echo $movie_ed->getMovieDirector(); ?>" required>
 			</div>
 			<div class="form-group">
 				<label>Description</label>
-				<textarea class="form-control" name="des" required><?php echo$row['m_des']; ?>    </textarea>
+				<textarea class="form-control" name="des" required><?php echo $movie_ed->getMovieDescription(); ?>    </textarea>
 			</div>
 
 			<div class="form-group">
 				<label>Movie Banner</label>
 				<img src="../upload/<?php echo$row['m_banner']; ?>" width="90px" height="90px">
-				<input type="file" class="form-control" name="banner" value="<?php echo$row['m_banner']; ?>" required>
+				<input type="file" class="form-control" name="banner" value="<?php echo $movie_ed->getMovieBanner(); ?>" required>
 				
 			</div>
-			    <input type="hidden" name="id" value ="<?php echo$row['m_id']; ?>" >
+			    <input type="hidden" name="id" value ="<?php $movie_ed->getMovieId(); ?>" >
 			
 			<input type="submit" class="btn btn-success btn-sm" value="Submit">
-			<a href="movie_disable.php?id=<?php echo$row['m_id']; ?>" class="btn btn-danger btn-sm">Disable</a>
+			<a href="movie_disable.php?id=<?php echo $movie_ed->getMovieId(); ?>" class="btn btn-danger btn-sm">Disable</a>
 		</form>
 	</div>
   </div>

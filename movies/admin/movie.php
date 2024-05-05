@@ -50,7 +50,7 @@
 	  <h6 class="m-0 font-weight-bold text-primary">Add New Movie</h6>
 	</div>
 	<div class="card-body">
-		<form action="../Models/Movie.php" method="post" onsubmit="checkForm(this); return false;" name="form" enctype="multipart/form-data">
+		<form action="../Models/Movie.php" method="post" onsubmit="checkForm(this);" name="form" enctype="multipart/form-data">
 			<?php
 			if(isset($_SESSION['done']))
 			{
@@ -91,6 +91,7 @@
 				<input type="file" class="form-control" name="banner" required >
 			</div>
 			<input type="submit"  class="btn btn-success btn-sm" value="Submit">
+			<input type="hidden" name="add" value="1">
 		</form>
 	</div>
   </div>

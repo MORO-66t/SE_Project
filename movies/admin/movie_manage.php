@@ -75,8 +75,8 @@ if($row['m_status']==0)
 else
 {
 echo'<a href="movie_edit.php?id='.$row['m_id'].'" class="btn btn-success btn-sm">Edit</a>';
-}
-             echo'<a href="movie_delete.php?id='.$row['m_id'].'" class="btn btn-danger btn-sm  ">Delete</a></td>';
+} 
+             echo'<a href="../Models/Movie.php?id='.$row['m_id'].'" class="btn btn-danger btn-sm  ">Delete</a></td>';
              $co++;
              }
              ?>
