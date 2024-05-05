@@ -17,10 +17,10 @@
 	  <h6 class="m-0 font-weight-bold text-primary">Edit Movie</h6>
 	</div>
 	<div class="card-body">
-		<form action="movie_editpro.php" method="post" enctype="multipart/form-data">
+		<form action="../Models/Movie.php?ed=1&bd=<?php echo $movie_ed->getMovieId(); ?>" method="post" enctype="multipart/form-data">
 			<div class="form-group">
-				<label>Movie Name</label>
-				<input type="text" class="form-control" name="mnm" value="<?php echo $movie_ed->getMovieName(); ?>" required>
+				<label>Movie Name </label>
+				<input type="text" class="form-control" name="mnm" value="<?php echo  $movie_ed->getMovieName(); ?>" required>
 			</div>
 			<div class="form-group">
 				<label>Release Date</label>
@@ -41,14 +41,15 @@
 
 			<div class="form-group">
 				<label>Movie Banner</label>
-				<img src="../upload/<?php echo$row['m_banner']; ?>" width="90px" height="90px">
+				<img src="../upload/<?php echo $movie_ed->getMovieBanner(); ?>" width="90px" height="90px">
 				<input type="file" class="form-control" name="banner" value="<?php echo $movie_ed->getMovieBanner(); ?>" required>
 				
 			</div>
-			    <input type="hidden" name="id" value ="<?php $movie_ed->getMovieId(); ?>" >
+			    <input type="hidden" name="bd" value ="<?php $movie_ed->getMovieId(); ?>" >
+				<input type="hidden" name="ed" value ="1" >
 			
 			<input type="submit" class="btn btn-success btn-sm" value="Submit">
-			<a href="movie_disable.php?id=<?php echo $movie_ed->getMovieId(); ?>" class="btn btn-danger btn-sm">Disable</a>
+			<!-- <a href="movie_disable.php?id=<php echo $movie_ed->getMovieId(); ?>" class="btn btn-danger btn-sm">Disable</a> -->
 		</form>
 	</div>
   </div>

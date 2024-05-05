@@ -1,15 +1,15 @@
 <?php
 
 class Movie {
-private $movie_id;
-private $movie_name;
-private $movie_date;
-private $movie_cast;
-private $movie_d;
-private $movie_director;
-private $movie_banner;
-private $movie_shows;
-private $movie_active;
+public $movie_id;
+public $movie_name;
+public $movie_date;
+public $movie_cast;
+public $movie_d;
+public $movie_director;
+public $movie_banner;
+public $movie_shows;
+public $movie_active;
 
 public function __construct($id=-1) {
     if($id != -1){
@@ -17,16 +17,16 @@ public function __construct($id=-1) {
     $sq="select *  from movies where m_id=$id ";
 	$res=mysqli_query($con,$sq);
 	$row=mysqli_fetch_assoc($res);
-    $this->$movie_id=$id;
-    $this->$movie_name = $row['m_nm'];
-    $this->$movie_date = $row['m_date'];
-    $this->$movie_cast = $row['m_cnm'];
-    $this->$movie_director = $row['m_dnm'];
-    $this->$movie_d = isset($row['m_des']) ? $row['m_des'] : null;
-    $this->$movie_banner = $row['m_banner'];
-    $this->$movie_shows = $row['m_shw'];
-    $this->$movie_active = $row['m_status'];
-    }
+    $this->movie_id=$id;
+    $this->movie_name = $row['m_nm'];
+    $this->movie_date = $row['m_date'];
+    $this->movie_cast = $row['m_cnm'];
+    $this->movie_director = $row['m_dnm'];
+    $this->movie_d = isset($row['m_des']) ? $row['m_des'] : null;
+    $this->movie_banner = $row['m_banner'];
+    $this->movie_shows = $row['m_shw'];
+    $this->movie_active = $row['m_status'];}
+    
 }
 public function getMovieId() {
     return $this->movie_id;
@@ -128,18 +128,64 @@ session_start();
 	}
 }
 
+public function movie_edit(){
+    include("../include/config.php");
+    session_start();
+    extract($_POST);
+    extract($_FILES);
+    $error=array();
+    $ext=strtoupper(substr($_FILES['banner']['name'],-4));
+        if( !empty($_POST))
+        {
+             if(empty($_FILES))
+        {
+            $error[]="Please Upload Image";
+        } 
+        else if(!($ext=='.JPG' || $ext=='.PNG'|| $ext=='.GIF' || $ext=='JPEG'))
+        {
+        $error[]="Upload Proper Image This Type Is Invalid";	
+        }
+        else if(! empty($error))
+        {
+        $_SESSION['error']=$error;	
+        header("location:../admin/movie_edit.php");
+        }
+        else
+        {
+        $t=time();
+         $banner=$t.'_'.$_FILES['banner']['name'];
+        move_uploaded_file($_FILES['banner']['tmp_name'],'../upload/'.$banner);	
+        $bd = $_GET["bd"];
+        if (!$bd)
+        header("location: mo.php?&m_nm='$mnm', m_date='$rdate', m_cnm='$cnm', m_dnm='$dnm', m_des='$des', m_banner='$banner' where m_id=$bd ");
+        $uq="update  movies set m_nm='$mnm', m_date='$rdate', m_cnm='$cnm', m_dnm='$dnm', m_des='$des', m_banner='$banner' where m_id=$bd ";
+        mysqli_query($con,$uq);
+        $_SESSION['update']="Successfully Updated";
+        header("location:../admin/movie_manage.php");
+        }
+    }
+        else
+        {
+        header("location:movie.php");
+        }
+    
+}
+
 }
 
 extract($_POST);
-$mo = new Movie();
-if ($add == 1)
+$mo = new Movie(-1);
+if (isset($add))
 {
     $mo->addmovie();
 }
-if (!empty($_GET) && $del == 1)
+if (!empty($_GET) && isset($_GET["del"]))
 {
     $mo->del_movie();
 }
 
+if (!empty($_GET) && isset($_POST["ed"])){
+     $mo->movie_edit();
+}
 
 ?>

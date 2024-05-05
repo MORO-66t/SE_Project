@@ -25,7 +25,7 @@
 			    <input type="hidden" name="id" value ="<?php echo$row['s_id']; ?>" >
 			
 			<input type="submit" class="btn btn-success btn-sm" value="Submit">
-			<a href="screen_disable.php?id=<?php echo$row['s_id']; ?>" class="btn btn-danger btn-sm">Disable</a>
+			<a href="screen_disable.php?id=<php echo$row['s_id']; ?>" class="btn btn-danger btn-sm">Disable</a>
 		</form>
 	</div>
   </div>

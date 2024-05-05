@@ -68,15 +68,15 @@ $des=substr($row['m_des'],0,40);
         echo'<td>'.$des.'....</td>';
      echo'<td><img src="../upload/'.$row['m_banner'].'" width="100upx" height="100px" /></td>';
              echo'<td>';
-if($row['m_status']==0)
-{
-	echo'<a href="movie_enable.php?id='.$row['m_id'].'" class="btn btn-info btn-sm">Enable</a>';
-}
-else
-{
-echo'<a href="movie_edit.php?id='.$row['m_id'].'" class="btn btn-success btn-sm">Edit</a>';
-} 
-             echo'<a href="../Models/Movie.php?id='.$row['m_id'].'" name= "del" value= "1" class="btn btn-danger btn-sm  ">Delete</a></td>';
+// if($row['m_status']==0)
+// {
+// 	echo'<a href="movie_enable.php?id='.$row['m_id'].'" class="btn btn-info btn-sm">Enable</a>';
+// }
+// else
+// {
+echo'<a href="movie_edit.php?id='.$row['m_id'].'&ed=value" class="btn btn-success btn-sm">Edit</a>';
+// } 
+             echo'<a href="../Models/Movie.php?id='.$row['m_id'].'&del=value" class="btn btn-danger btn-sm  ">Delete</a></td>';
              $co++;
              }
              ?>
