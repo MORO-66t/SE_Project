@@ -17,7 +17,7 @@
 	  <h6 class="m-0 font-weight-bold text-primary">Add New Show</h6>
 	</div>
 	<div class="card-body">
-		<form action="show_add.php" method="post">
+		<form action="../Models/Show.php?addshow=1" method="post">
 			<?php
 			
 			if(!isset($_SESSION['sr']))

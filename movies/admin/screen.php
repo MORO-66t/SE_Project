@@ -13,7 +13,7 @@
 	  <h6 class="m-0 font-weight-bold text-primary">Add New Screen</h6>
 	</div>
 	<div class="card-body">
-		<form action="screen_add.php" method="post">
+		<form action="../Models/Theatre.php?adds" method="post">
 			<?php
 			if(isset($_SESSION['done']))
 			{

@@ -61,15 +61,15 @@ while($row=mysqli_fetch_assoc($sq))
                echo'<td>'.$row['t_city'].'</td>';
               echo'<td>'.$tt.'</td>';
              echo'<td>';
-if($row['t_status']==0)
-{
-	echo'<a href="theatre_enable.php?id='.$row['t_id'].'" class="btn btn-info btn-sm">Enable</a>';
-}
-else
-{
-echo'<a href="theatre_edit.php?id='.$row['t_id'].'" class="btn btn-success btn-sm">Edit</a>';
-}
-             echo'<a href="theatre_delete.php?id='.$row['t_id'].'" class="btn btn-danger btn-sm  ">Delete</a></td>';
+// if($row['t_status']==0)
+// {
+// 	echo'<a href="theatre_enable.php?id='.$row['t_id'].'" class="btn btn-info btn-sm">Enable</a>';
+// }
+// else
+// {
+// echo'<a href="theatre_edit.php?id='.$row['t_id'].'" class="btn btn-success btn-sm">Edit</a>';
+// }
+             echo'<a href="../Models/Theatre.php?id='.$row['t_id'].'&del=1" class="btn btn-danger btn-sm  ">Delete</a></td>';
              $co++;
              }
              ?>

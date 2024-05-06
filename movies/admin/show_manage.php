@@ -82,15 +82,15 @@ while($row=mysqli_fetch_assoc($sq))
               echo'<td>'.$s_row['s_nm'].'</td>';
               echo'<td>'.$row['show_price'].'</td>';
              echo'<td>';
-if($row['show_status']==0)
-{
-	echo'<a href="show_enable.php?id='.$row['show_id'].'&mid='.$m_row['m_id'].'" class="btn btn-success btn-sm">Enable</a>';
-}
-else
-{
-echo'<a href="show_disable.php?id='.$row['show_id'].'&mid='.$m_row['m_id'].'" class="btn btn-info btn-sm btn-sm">Disable</a>';
-}
-             echo'<a href="show_delete.php?id='.$row['show_id'].'&mid='.$m_row['m_id'].'" class="btn btn-danger btn-sm  ">Delete</a></td>';
+// if($row['show_status']==0)
+// {
+// 	echo'<a href="show_enable.php?id='.$row['show_id'].'&mid='.$m_row['m_id'].'" class="btn btn-success btn-sm">Enable</a>';
+// }
+// else
+// {
+// echo'<a href="show_disable.php?id='.$row['show_id'].'&mid='.$m_row['m_id'].'" class="btn btn-info btn-sm btn-sm">Disable</a>';
+// }
+             echo'<a href="../Models/Show.php?id='.$row['show_id'].'&mid='.$m_row['m_id'].'&delsh" class="btn btn-danger btn-sm  ">Delete</a></td>';
              $co++;
              }
              ?>

@@ -62,6 +62,7 @@ error_reporting(0);
 				
 				<div class="clearfix"></div>
 			</div>
+
 	<div class="bootstrap_container">
             <nav class="navbar navbar-default w3_megamenu" role="navigation">
                 <div class="navbar-header">

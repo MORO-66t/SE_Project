@@ -1,6 +1,7 @@
 <?php
 	include("include/header.php");
 	include("../include/config.php");
+  include("../Models/Admin.php");
 	session_start();
 ?>
 <!-- Begin Page Content -->
@@ -53,30 +54,8 @@
                   </thead>
                   <tbody>
           <?php
-  $sq=mysqli_query($con,"select * from register");
-  $co=1;
-while($row=mysqli_fetch_assoc($sq))    	
-              {
-                 echo'<tr>';
-               echo'<td>'.$co.'</td>';
-               echo'<td>'.$row['r_nm'].'</td>';
-               echo'<td>'.$row['r_gender'].'</td>';
-              echo'<td>'.$row['r_age'].'</td>';
-              echo'<td>'.$row['r_email'].'</td>';
-              echo'<td>'.$row['r_mno'].'</td>';
-              echo'<td>'.date('d-m-Y',$row['r_time']).'</td>';
-             echo'<td>';
-if($row['r_status']==0)
-{
-	echo'<a href="user_enable.php?id='.$row['r_id'].'" class="btn btn-info btn-sm">Enable</a>';
-}
-else
-{
-echo'<a href="user_edit.php?id='.$row['r_id'].'" class="btn btn-success btn-sm">Edit</a>';
-}
-             echo'<a href="user_delete.php?id='.$row['r_id'].'" class="btn btn-danger btn-sm">Delete</a></td>';
-             $co++;
-             }
+            $sho= new Admin();
+            $sho->showUser();
              ?>
                     </tr>
                   </tbody>

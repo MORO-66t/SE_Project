@@ -12,7 +12,7 @@
 	  <h6 class="m-0 font-weight-bold text-primary">Add New Theatre</h6>
 	</div>
 	<div class="card-body">
-		<form action="theatre_add.php" method="post">
+		<form action="../Models/Theatre.php?add=1" method="post">
 			<?php
 			if(isset($_SESSION['done']))
 			{

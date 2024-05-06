@@ -2,8 +2,9 @@
 include ("include/header.php");
 $sq="select * from movies";
 $res=mysqli_query($con,$sq);
+// include ("./navbar.php");
 ?>
-	
+
 	<div class="now-showing-movies">
 		<h3 class="m-head">Now Showing</h3>
 		<?php
@@ -35,39 +36,11 @@ $res=mysqli_query($con,$sq);
 		 <div class="clearfix"></div>
 	</div>
 	<div class="now-showing-movies">
-			<!-- <php
-			$usq="select * from upmovies";
-$ures=mysqli_query($con,$usq);
-?> -->
-<!-- <div class="now-showing-movies">
-		<h3  class="m-head" align="center">UPCOMING MOVIES</h3>
-		<php
-											while($urow=mysqli_fetch_assoc($ures))
-											{
-												?>
-<div class="col-md-4 movie-preview">
-			<a href="movie_details.php?id=<php echo$urow['um_id']; ?>" class="mask">
-				<img src="upload/<php echo $urow['um_banner'];?>" class="img-responsive zoom-img" alt="" />
-				<div class="m-movie-title">
-					<a class="m-movie-link" href="movie_details.php?id=<php echo$urow['um_id']; ?>"><?php echo$urow['um_nm']; ?></a>
-					<div class="clearfix"></div>
-					<div class="m-r-date">
-						<p><i class="fa fa-calendar-o"></i><php echo$urow['um_date']; ?></p>
-						<a href="movie_details.php?id=<php echo$urow['um_id']; ?>">Details</a>
-					</div>
-					<div class="m-r-like">
-						<i class="fa fa-thumbs-up"></i>
-						<p>rocking</p>
-					</div>
-					 <div class="clearfix"></div>
-				</div>
-			</a>
-		</div>
-		<php
-		}
-		?> -->
+
 		 <div class="clearfix"></div>
 	</div>
+	<link rel="newest stylesheet" href="./css/project-A.css">
 <?php
+		include ('cta+footer.php');
 		include ('include/footer.php');
 		?>
