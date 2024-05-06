@@ -1,11 +1,11 @@
 <?php
 class Theatre{
-    public $t_id;
-    public $t_name;
-    public $t_city;
-    public $t_time;
-    public $t_status;
-    public function __construct($id=-1){
+    private $t_id;
+    private $t_name;
+    private $t_city;
+    private $t_time;
+    private $t_status;
+    private function __construct($id=-1){
         if($id> 0){
         include("../include/config.php");
         $sq="select *  from theatre where t_id=$id ";

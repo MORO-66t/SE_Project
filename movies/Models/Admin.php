@@ -1,13 +1,10 @@
 <?php
-
-class Admin{
+include("Person.php");
+class Admin {
 
     public function __construct(){
-
+       // parent::__construct();
     }
-
-
-
 
 
 public function showUser(){

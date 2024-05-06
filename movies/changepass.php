@@ -1,8 +1,12 @@
 <?php include('include/header.php');
 include("include/config.php");
-$sq="select * from register where r_id='".$_SESSION['client']['uid']."' ";
+include("./Models/User.php");
+$id=$_SESSION['client']['uid'];
+$sq="select * from register where r_id=$id";
 	$res=mysqli_query($con,$sq);
 	$row=mysqli_fetch_array($res);
+	
+
 ?>
 <div class="content">
 	<div class="wrap">
@@ -23,9 +27,10 @@ $sq="select * from register where r_id='".$_SESSION['client']['uid']."' ";
 				echo'<font color="green">'.$_SESSION['done'].'</font>';
 				unset($_SESSION['done']);
 			    }
+				
 				?>
 				<p class="login-box-msg">Change Your Password Dear,<?php echo $row['r_nm']; ?></p>
-				<form action="changepass_pro.php" method="post">
+				<form action="./Models/User.php?ch=1" method="post">
   
      <div class="form-group has-feedback">
         <input name="opwd" type="password" size="25" placeholder="Old Password" class="form-control" required />

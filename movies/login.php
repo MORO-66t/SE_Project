@@ -19,7 +19,7 @@
 			    }
 				?>
 				<p class="login-box-msg">Sign In For Booking Movie Ticket</p>
-				<form action="process_login.php" method="post">
+				<form action="./Models/User.php?log=1" method="post">
       <div class="form-group has-feedback">
         <input name="email" type="text" size="25" placeholder="Email" class="form-control" placeholder="Email"/>
 

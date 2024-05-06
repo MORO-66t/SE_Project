@@ -1,6 +1,7 @@
 <?php
 	include("include/header.php");
 	include("../include/config.php");
+  include("../Models/Contact.php");
 	session_start();
 ?>
 <!-- Begin Page Content -->
@@ -52,21 +53,8 @@
                   </thead>
                   <tbody>
           <?php
-  $sq=mysqli_query($con,"select * from contact");
-  $co=1;
-while($row=mysqli_fetch_assoc($sq))    	
-              {
-       $tt=date('d-m-Y',$row['co_time']);
-                 echo'<tr>';
-               echo'<td>'.$co.'</td>';
-               echo'<td>'.$row['co_nm'].'</td>';
-               echo'<td>'.$row['co_email'].'</td>';
-               echo'<td>'.$row['co_mno'].'</td>';
-               echo'<td>'.$row['co_msg'].'</td>';
-               echo'<td>'.$tt.'</td>';
-             echo'<td><a href="contact_delete.php?id='.$row['co_id'].' ">Delete</a></td>';
-             $co++;
-             }
+              $mass= new Contact();
+              $mass->recieveMessage();
              ?>
                     </tr>
                   </tbody>

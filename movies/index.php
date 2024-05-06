@@ -41,6 +41,6 @@ $res=mysqli_query($con,$sq);
 	</div>
 	<link rel="newest stylesheet" href="./css/project-A.css">
 <?php
-		include ('cta+footer.php');
+		include ('include/cta+footer.php');
 		include ('include/footer.php');
 		?>

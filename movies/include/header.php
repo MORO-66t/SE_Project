@@ -82,7 +82,7 @@ error_reporting(0);
 {
 echo' <li class="dropdown"><a href="profile.php" class="dropdown-toggle">Booking History</a>';
 echo' <li class="dropdown"><a href="changepass.php" class="dropdown-toggle">Change Password</a>';
-echo' <li class="dropdown"><a href="logout.php" class="dropdown-toggle">Logout</a>';
+echo' <li class="dropdown"><a href="Models/User.php?out=1" class="dropdown-toggle">Logout</a>';
 }
 else
 {

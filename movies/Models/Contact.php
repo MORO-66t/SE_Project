@@ -53,11 +53,50 @@
         }
     }
 
+    public function deleteMassage(){
+        include("../include/config.php");
+    session_start();
+    if( !empty($_GET))
+    {
+	session_start();
+	$id=$_GET['id'];
+	$dq="delete from contact where co_id=$id ";
+	mysqli_query($con,$dq);
+	$_SESSION['del']="Successfully Deleted";
+	header("location: ../admin/contact_manage.php");
+	}
+	else
+	{
+	header("location: ../admin/contact_manage.php");
+	}
+    }
+    public function recieveMessage(){
+        include("../include/config.php");
+        $sq=mysqli_query($con,"select * from contact");
+        $co=1;
+      while($row=mysqli_fetch_assoc($sq))    	
+                    {
+             $tt=date('d-m-Y',$row['co_time']);
+                       echo'<tr>';
+                     echo'<td>'.$co.'</td>';
+                     echo'<td>'.$row['co_nm'].'</td>';
+                     echo'<td>'.$row['co_email'].'</td>';
+                     echo'<td>'.$row['co_mno'].'</td>';
+                     echo'<td>'.$row['co_msg'].'</td>';
+                     echo'<td>'.$tt.'</td>';
+                   echo'<td><a href="contact_delete.php?id='.$row['co_id'].'&del=1 ">Delete</a></td>';
+                   $co++;
+                   }
+    }
+
     }
 
     $cont =new Contact();
 
     if(isset($_GET["send"])){
         $cont->sendemassage();
+    }
+    if(isset($_GET["del"])){
+        $cont->deleteMassage();
     }
 ?>

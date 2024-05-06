@@ -1,15 +1,15 @@
 <?php
 
 class Movie {
-public $movie_id;
-public $movie_name;
-public $movie_date;
-public $movie_cast;
-public $movie_d;
-public $movie_director;
-public $movie_banner;
-public $movie_shows;
-public $movie_active;
+private $movie_id;
+private $movie_name;
+private $movie_date;
+private $movie_cast;
+private $movie_d;
+private $movie_director;
+private $movie_banner;
+private $movie_shows;
+private $movie_active;
 
 public function __construct($id=-1) {
     if($id != -1){

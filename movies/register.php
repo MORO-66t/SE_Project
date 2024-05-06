@@ -26,7 +26,7 @@
 		}
 		?>
 				  <div class="panel-body">
-				<form action="process_registration.php" method="post" id="form1">
+				<form action="./Models/User.php?re=1" method="post" id="form1">
 				    <div class="form-group has-feedback">
         <input name="nm" type="text" size="25" placeholder="Name" class="form-control" required/>
 </div>
