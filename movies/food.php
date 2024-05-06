@@ -23,6 +23,7 @@ $movie = mysqli_fetch_array($qry2);
             <h2 class="highlight">Select Cinema</h2>
             <p>Select your cinema location and order your favourite food and drinks.</p>
             <label>
+            <form action="foodmenu.php">    
                 <select name="" required>
                     <option value="" disabled selected>Please select cinema * </option>.
                     <option value="">City Centre Alexandria</option>
@@ -31,8 +32,9 @@ $movie = mysqli_fetch_array($qry2);
 
                 </select>
             </label>
-            <button class="button" type="button"><a href="foodmenu.php"></a> Order Online</button>
-
+            <button class="button" type="submit">Order Online</button>
+            
+        </form>
 
         </form>
 
