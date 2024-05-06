@@ -12,6 +12,8 @@ $movie = mysqli_fetch_array($qry2);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/foodmenu.css">
     <title>ORDER FOOD</title>
 </head>
 
@@ -21,7 +23,7 @@ $movie = mysqli_fetch_array($qry2);
             <h2 class="highlight">Select Cinema</h2>
             <p>Select your cinema location and order your favourite food and drinks.</p>
             <label>
-                <select name="" required="">
+                <select name="" required>
                     <option value="" disabled selected>Please select cinema * </option>.
                     <option value="">City Centre Alexandria</option>
                     <option value="">City Centre Almaza</option>
@@ -29,7 +31,7 @@ $movie = mysqli_fetch_array($qry2);
 
                 </select>
             </label>
-            <button class="action secondary" type="submit"><a href="foodmenu.php"></a> Order Online</button>
+            <button class="button" type="button"><a href="foodmenu.php"></a> Order Online</button>
 
 
         </form>
