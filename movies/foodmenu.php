@@ -124,9 +124,8 @@ $movie = mysqli_fetch_array($qry2);
 
                 <div class="card">
                     <img src="upload/FOOD/CRUNCHY CHEETOS.jpg" alt="">
-                    <div class="card-title">
+                    <div class="card-content">
                         <h2>Snacks</h2>
-
                         <div class="card-body">
                             <H3>CRUNCHY CHEETOS</H3>
                             <H4>20.00 EGP</H4>
