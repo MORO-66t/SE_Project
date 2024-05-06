@@ -171,7 +171,7 @@ echo "70%";
     </tbody>
                 </table>
               </div>
-			  <a href="clearlogs.php" class="btn btn-danger btn-sm btn-sm">Clear Activities</a>
+			  <!-- <a href="clearlogs.php" class="btn btn-danger btn-sm btn-sm">Clear Activities</a> -->
 	</div>
 
 <!-- /.container-fluid -->

@@ -6,5 +6,5 @@ if($_POST['id']){
 			while($row = mysqli_fetch_array($sql)){
 				echo '<option value="'.$row['s_id'].'">'.$row['s_nm'].'</option>';
 		}
-		}
+		} 
 ?>
