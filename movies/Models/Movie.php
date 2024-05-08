@@ -9,7 +9,6 @@ private $movie_d;
 private $movie_director;
 private $movie_banner;
 private $movie_shows;
-private $movie_active;
 
 public function __construct($id=-1) {
     if($id != -1){
@@ -25,7 +24,7 @@ public function __construct($id=-1) {
     $this->movie_d = isset($row['m_des']) ? $row['m_des'] : null;
     $this->movie_banner = $row['m_banner'];
     $this->movie_shows = $row['m_shw'];
-    $this->movie_active = $row['m_status'];}
+}
     
 }
 public function getMovieId() {
@@ -60,9 +59,6 @@ public function getMovieShows() {
     return $this->movie_shows;
 }
 
-public function getMovieActive() {
-    return $this->movie_active;
-}
 
 public function addmovie() {
     include("../include/config.php");

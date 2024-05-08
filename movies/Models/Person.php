@@ -7,12 +7,6 @@ protected $email;
 protected $password;
 
 public function __construct(){
-    // $this->name = "";
-    // $this->role = "";
-    // $this->pid = "";
-    // $this->password = "";
-    // $this->email = "";
-
 }
 
 public function getuser_Id() {

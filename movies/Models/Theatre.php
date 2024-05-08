@@ -3,8 +3,6 @@ class Theatre{
     private $t_id;
     private $t_name;
     private $t_city;
-    private $t_time;
-    private $t_status;
     private function __construct($id=-1){
         if($id> 0){
         include("../include/config.php");
@@ -14,8 +12,6 @@ class Theatre{
         $this->t_id=$row["t_id"]; 
         $this->t_name=$row["t_nm"]; 
         $this->t_city=$row["t_city"];
-        $this->t_time=$row["t_time"];
-        $this->t_status=$row["t_status"];
         }
     }
     public function getTId() {
@@ -30,13 +26,7 @@ class Theatre{
         return $this->t_city;
     }
     
-    public function getTTime() {
-        return $this->t_time;
-    }
-    
-    public function getTStatus() {
-        return $this->t_status;
-    }
+
 
 
     public function addtheatre(){
