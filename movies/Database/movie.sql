@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 08, 2024 at 06:34 PM
+-- Generation Time: May 08, 2024 at 07:26 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -139,6 +139,34 @@ CREATE TABLE `contact` (
 INSERT INTO `contact` (`co_id`, `co_nm`, `co_mno`, `co_email`, `co_msg`, `co_time`) VALUES
 (2, 'Darshak', '9714007824', 'pdwapinc@gmail.com', 'Fhjwjwj', 1559740252),
 (3, 'Mohamed ragab salama', '1027886935', 'mohamedragab987321654@gmail.com', 'Lorem Ipsum ', 1715007031);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `food`
+--
+
+CREATE TABLE `food` (
+  `FOODID` int(11) DEFAULT NULL,
+  `FOODName` varchar(255) DEFAULT NULL,
+  `PRICE` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `food`
+--
+
+INSERT INTO `food` (`FOODID`, `FOODName`, `PRICE`) VALUES
+(1, 'CB CHICKEN BURGER', 95),
+(2, 'CHEESYHOTDOG', 65),
+(3, 'HOT CHOCOLATE', 25),
+(4, 'MANGO JUICE', 15),
+(5, 'MILKSHAKE', 25),
+(6, 'AMRICANO', 15),
+(7, 'CARAMEL POPCORN', 25),
+(8, 'NACHOS', 20),
+(9, 'cutton candy', 20),
+(10, 'CRUNCHY CHEETOS', 20);
 
 -- --------------------------------------------------------
 
