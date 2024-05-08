@@ -37,6 +37,7 @@ if(!isset($_SESSION['client']['status']))
 						<th>Screen</th>
 						<th>Show Time</th>
 						<th>Seats</th>
+						<th>TOTALPRICE</th>
 						<th>Amount</th>
 						<th></th>
 						</thead>
@@ -53,6 +54,8 @@ if(!isset($_SESSION['client']['status']))
 							$seat=mysqli_query($con,"select * from seat where seat_show='".$bkg['b_show']."' and seat_uid='".$_SESSION['client']['uid']."' "); 
 							$tt=mysqli_query($con,"select * from theatre where t_id='".$bkg['b_theatre']."'");
 							$thr=mysqli_fetch_array($tt);
+							// $FOPRI=mysqli_query($con,"select * from receipt where user_id='".$_SESSION['uid']."'");
+							// $FOPRI=mysqli_fetch_array($FOPRI);
 							?>
 							<tr>
 								<td>
@@ -70,6 +73,10 @@ if(!isset($_SESSION['client']['status']))
 								<td>
 									<?php echo $shr['show_date'].'<br>'.$shr['show_time'];?>
 								</td>
+								<!-- <td> -->
+									<!--php echo $FOPRI['full_price']-->
+								<!-- </td> -->
+								
 								<td>
 									<?php 
 							while($seatrow=mysqli_fetch_array($seat))
@@ -108,7 +115,9 @@ if(!isset($_SESSION['client']['status']))
 					?>
 					<h3>No Previous Bookings</h3>
 					<?php
+
 				}
+				
 				?>
 					</div>			
 				</div>

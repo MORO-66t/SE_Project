@@ -1,5 +1,7 @@
 <?php
 class Food {
+    public $foodprice ;
+    public $foodname;
     public function __construct() {}
 
     public function __destruct() {}
@@ -10,8 +12,7 @@ class Food {
 
     public function __calculateprice(){}
 
-    public $foodprice ;
-    public $foodname;
+
     
 }
 ?>
