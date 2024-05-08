@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 08, 2024 at 04:10 PM
+-- Generation Time: May 08, 2024 at 06:34 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -64,7 +64,8 @@ INSERT INTO `activity` (`ac_id`, `ac_nm`, `ac_time`, `ac_tmp`) VALUES
 (123, 'mo@gmail.com Is Logged in', '1715020491', ''),
 (124, 'mo@gmail.com Is Logged in', '1715020622', ''),
 (125, 'mo@gmail.com Is Logged in', '1715020761', ''),
-(126, 'mo@gmail.com Is Logged in', '1715162792', '');
+(126, 'mo@gmail.com Is Logged in', '1715162792', ''),
+(127, 'mo@gmail.com Is Logged in', '1715184438', '');
 
 -- --------------------------------------------------------
 
@@ -172,6 +173,19 @@ INSERT INTO `movies` (`m_id`, `m_nm`, `m_date`, `m_cnm`, `m_dnm`, `m_des`, `m_ba
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `receipt`
+--
+
+CREATE TABLE `receipt` (
+  `receipt_id` int(11) NOT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  `movie_id` int(11) DEFAULT NULL,
+  `full_price` decimal(10,2) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `register`
 --
 
@@ -183,22 +197,23 @@ CREATE TABLE `register` (
   `r_mno` varchar(12) NOT NULL,
   `r_email` varchar(40) NOT NULL,
   `r_pwd` varchar(40) NOT NULL,
-  `r_time` bigint(40) NOT NULL
+  `r_time` bigint(40) NOT NULL,
+  `r_status` int(1) NOT NULL DEFAULT 1
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `register`
 --
 
-INSERT INTO `register` (`r_id`, `r_nm`, `r_age`, `r_gender`, `r_mno`, `r_email`, `r_pwd`, `r_time`) VALUES
-(12, 'Mohamed ragab salama', '77', 'Male', '1027886935', 'm@gmail.com', '0plm0plM', 1715017403),
-(4, 'Ram bhai', '20', 'Male', '2341235123', 'pdwapinc@gmail.com', '747233', 1559047656),
-(6, 'Ketan Patel', '40', 'Male', '4727727248', 'Ketan@mail.com', '123123', 1559047783),
-(7, 'Ketan Patel', '40', 'Male', '000000000', 'Ketanz@mail.com', '121212', 1559047797),
-(8, 'Pd wap', '22', 'Male', '1482848289', 'pdwapofficial@gmail.com', '123123', 1559736049),
-(9, 'Darshak', '22', 'Male', '9714007824', 'pdwapinc@gmail.com', '123123', 1559738573),
-(10, 'pradip swer', '19', 'Male', '9912456780', 'p@gmail.com', '121212', 1563636916),
-(11, 'Mohamed ragab salama', '77', 'Male', '1027886935', 'mo@gmail.com', '0plm0plM', 1714927703);
+INSERT INTO `register` (`r_id`, `r_nm`, `r_age`, `r_gender`, `r_mno`, `r_email`, `r_pwd`, `r_time`, `r_status`) VALUES
+(12, 'Mohamed ragab salama', '77', 'Male', '1027886935', 'm@gmail.com', '0plm0plM', 1715017403, 1),
+(4, 'Ram bhai', '20', 'Male', '2341235123', 'pdwapinc@gmail.com', '747233', 1559047656, 1),
+(6, 'Ketan Patel', '40', 'Male', '4727727248', 'Ketan@mail.com', '123123', 1559047783, 1),
+(7, 'Ketan Patel', '40', 'Male', '000000000', 'Ketanz@mail.com', '121212', 1559047797, 1),
+(8, 'Pd wap', '22', 'Male', '1482848289', 'pdwapofficial@gmail.com', '123123', 1559736049, 1),
+(9, 'Darshak', '22', 'Male', '9714007824', 'pdwapinc@gmail.com', '123123', 1559738573, 1),
+(10, 'pradip swer', '19', 'Male', '9912456780', 'p@gmail.com', '121212', 1563636916, 1),
+(11, 'Mohamed ragab salama', '77', 'Male', '1027886935', 'mo@gmail.com', '0plm0plM', 1714927703, 1);
 
 -- --------------------------------------------------------
 
@@ -968,6 +983,12 @@ ALTER TABLE `movies`
   ADD PRIMARY KEY (`m_id`);
 
 --
+-- Indexes for table `receipt`
+--
+ALTER TABLE `receipt`
+  ADD PRIMARY KEY (`receipt_id`);
+
+--
 -- Indexes for table `register`
 --
 ALTER TABLE `register`
@@ -1005,7 +1026,7 @@ ALTER TABLE `theatre`
 -- AUTO_INCREMENT for table `activity`
 --
 ALTER TABLE `activity`
-  MODIFY `ac_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=127;
+  MODIFY `ac_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=128;
 
 --
 -- AUTO_INCREMENT for table `admin`
@@ -1030,6 +1051,12 @@ ALTER TABLE `contact`
 --
 ALTER TABLE `movies`
   MODIFY `m_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+
+--
+-- AUTO_INCREMENT for table `receipt`
+--
+ALTER TABLE `receipt`
+  MODIFY `receipt_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `register`
