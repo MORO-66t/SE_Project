@@ -147,27 +147,27 @@ $movie = mysqli_fetch_array($qry2);
     <section class="food2">
 
         <div class="FOOD-form-container form">
-            <form action="verify.php" method="POST">
-                <select name="theatre" required>
+            <form action="foodmenumanege.php" method="POST">
+                <select name="theatre" id="1" required>
                     <option value="" disabled selected>THEATRE</option>
                     <option value="">City Centre Alexandria</option>
                     <option value="">City Centre Almaza</option>
                     <option value="">Mall of Egypt</option>
                 </select>
-                <select name="HOT_FOOD">
+                <select name="HOT_FOOD" id="2">
                     <option value="" disabled selected>HOT_FOOD</option>
                     <option value="CB CHICKEN BURGER">CB CHICKEN BURGER</option>
                     <option value="CHEESYHOTDOG">CHEESYHOTDOG</option>
                 </select>
 
-                <select name="DRINK">
+                <select name="DRINK" id="2" >
                     <option value="" disabled selected>DRINK</option>
                     <option value="MILK SHAKE">MILK SHAKE</option>
                     <option value="AMRICANO">AMRICANO</option>
                     <option value="HOT CHOCOLATE">HOT CHOCOLATE</option>
                     <option value="JUICE">JUICE</option>
                 </select>
-                <select name="Snacks">
+                <select name="Snacks" id="2" >
                     <option value="" disabled selected>Snacks</option>
                     <option value="CARAMEL POPCORN">CARAMEL POPCORN</option>
                     <option value="CRUNCHY CHEETOS">CRUNCHY CHEETOS</option>
@@ -175,35 +175,19 @@ $movie = mysqli_fetch_array($qry2);
                     <option value="cutton candy">cutton candy</option>
                 </select>
 
-                <select name="date">
-                    <option value="" disabled selected>DATE</option>
-                    <option value="12-3">March 12,2019</option>
-                    <option value="13-3">March 13,2019</option>
-                    <option value="14-3">March 14,2019</option>
-                    <option value="15-3">March 15,2019</option>
-                    <option value="16-3">March 16,2019</option>
-                </select>
-
-                <select name="hour">
-                    <option value="" disabled selected>TIME</option>
-                    <option value="09-00">09:00 AM</option>
-                    <option value="12-00">12:00 AM</option>
-                    <option value="15-00">03:00 PM</option>
-                    <option value="18-00">06:00 PM</option>
-                    <option value="21-00">09:00 PM</option>
-                    <option value="24-00">12:00 PM</option>
-                </select>
-                <input placeholder="First Name" type="text" name="fName" required>
-                <input placeholder="Last Name" type="text" name="lName">
-                <input placeholder="Phone Number" type="text" name="pNumber" required>
-                <input placeholder="email" type="email" name="email" required>
-                <input type="hidden" name="movie_id" value="<?php echo $id; ?>">
-
-
-
+               
+                <input type="text" name="Moviename" id="4"  required placeholder="Movie Name" >
+                <input placeholder="First Name" type="text" name="fName" id="5" required>
+                <input placeholder="Last Name" type="text" name="lName" id="6" >
+                <input placeholder="Phone Number" type="text" name="pNumber" id="7" required>
+                <input placeholder="email" type="email" name="email" id="8"  required>
                 <button type="submit" value="save" name="submit" class="form-btn">Food Request</button>
 
             </form>
+
+            <?php
+
+            ?>
         </div>
         </div>
     </section>
