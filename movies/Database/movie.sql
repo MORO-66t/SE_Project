@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 08, 2024 at 06:34 PM
+-- Generation Time: May 08, 2024 at 07:14 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -139,6 +139,18 @@ CREATE TABLE `contact` (
 INSERT INTO `contact` (`co_id`, `co_nm`, `co_mno`, `co_email`, `co_msg`, `co_time`) VALUES
 (2, 'Darshak', '9714007824', 'pdwapinc@gmail.com', 'Fhjwjwj', 1559740252),
 (3, 'Mohamed ragab salama', '1027886935', 'mohamedragab987321654@gmail.com', 'Lorem Ipsum ', 1715007031);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `food`
+--
+
+CREATE TABLE `food` (
+  `foodid` int(11) NOT NULL,
+  `foodName` varchar(30) DEFAULT NULL,
+  `price` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -977,6 +989,12 @@ ALTER TABLE `contact`
   ADD PRIMARY KEY (`co_id`);
 
 --
+-- Indexes for table `food`
+--
+ALTER TABLE `food`
+  ADD PRIMARY KEY (`foodid`);
+
+--
 -- Indexes for table `movies`
 --
 ALTER TABLE `movies`
@@ -1045,6 +1063,12 @@ ALTER TABLE `booking`
 --
 ALTER TABLE `contact`
   MODIFY `co_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `food`
+--
+ALTER TABLE `food`
+  MODIFY `foodid` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `movies`
