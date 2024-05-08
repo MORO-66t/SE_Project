@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 08, 2024 at 06:34 PM
+-- Generation Time: May 09, 2024 at 01:49 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -65,7 +65,10 @@ INSERT INTO `activity` (`ac_id`, `ac_nm`, `ac_time`, `ac_tmp`) VALUES
 (124, 'mo@gmail.com Is Logged in', '1715020622', ''),
 (125, 'mo@gmail.com Is Logged in', '1715020761', ''),
 (126, 'mo@gmail.com Is Logged in', '1715162792', ''),
-(127, 'mo@gmail.com Is Logged in', '1715184438', '');
+(127, 'mo@gmail.com Is Logged in', '1715184438', ''),
+(128, 'midohegazy585@gmail.com Is Registered', '1715192446', ''),
+(129, 'midohegazy585@gmail.com Is Logged in', '1715192453', ''),
+(130, 'midohegazy585@gmail.com Is Logged in', '1715210160', '');
 
 -- --------------------------------------------------------
 
@@ -143,6 +146,34 @@ INSERT INTO `contact` (`co_id`, `co_nm`, `co_mno`, `co_email`, `co_msg`, `co_tim
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `food`
+--
+
+CREATE TABLE `food` (
+  `FOODID` int(11) DEFAULT NULL,
+  `FOODName` varchar(255) DEFAULT NULL,
+  `PRICE` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `food`
+--
+
+INSERT INTO `food` (`FOODID`, `FOODName`, `PRICE`) VALUES
+(1, 'CB CHICKEN BURGER', 95),
+(2, 'CHEESYHOTDOG', 65),
+(3, 'HOT CHOCOLATE', 25),
+(4, 'MANGO JUICE', 15),
+(5, 'MILKSHAKE', 25),
+(6, 'AMRICANO', 15),
+(7, 'CARAMEL POPCORN', 25),
+(8, 'NACHOS', 20),
+(9, 'cutton candy', 20),
+(10, 'CRUNCHY CHEETOS', 20);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `movies`
 --
 
@@ -164,11 +195,13 @@ CREATE TABLE `movies` (
 INSERT INTO `movies` (`m_id`, `m_nm`, `m_date`, `m_cnm`, `m_dnm`, `m_des`, `m_banner`, `m_shw`) VALUES
 (16, 'Article 11', '2019-06-28', 'Ayushmann Khurrana Isha Talwar Sayani Gupta', 'Anubhav Sinha', 'A crime thriller film directed by Anubhav Sinha, starring Ayushmann Khurrana, Isha Talwar and Sayani Gupta in the lead roles.            ', '1714940077_1563833516_article.jpg', 0),
 (15, 'The Lion King', '2019-07-19', 'Amy Sedaris Donald Glover Keegan-Michael Key', 'Jon Favreau ', 'Simba idolizes his father Mufasa and follows his footsteps to achieve his royal destiny with the help of his newfound friends and regain what is rightfully his.    ', '1563833550_lionking.jpeg', 0),
-(17, 'Spider Man:Far From Home', '2019-07-04', 'Jake Gyllenhaal Marisa Tomei Samuel L Jackson Tom Hollander', 'Jon Watts', 'Dubbed action adventure film directed by Jon Watts, starring Jake Gyllenhaal, Tom Holland and Zendaya in the lead roles.    ', '1563833608_spider.jpg', 1),
+(28, 'Sonice the hedgehog 3', '05/22/2025', 'Jeff Fowler', 'Keanu Reeves (Shadow)', 'Sonic the Hedgehog 3 is an upcoming action-adventure comedy film based on the video game series published by Sega. The sequel to Sonic the Hedgehog and Sonic the Hedgehog 2, it is directed by Jeff Fowler. James Marsden, Ben Schwartz, Tika Sumpter, Colleen O\'Shaughnessey, Lee Majdoub, Idris Elba, and Jim Carrey reprise their roles from previous installments, with Keanu Reeves joining the cast.', '1715209452_MV5BZGViYjkxN2YtOTA1ZS00ZDQzLWEzMjgtN2E3NWUwZTg1Mjg2XkEyXkFqcGdeQXVyMTcyNjczNjU4._V1_FMjpg_UX1000_.jpg', 1),
 (18, 'Kabir Singh', '2019-06-21', 'Kiara Advani, Shahid Kapoor', 'Sandeep Reddy Vanga ', 'A short-tempered alcoholic surgeon goes down a self-destructive path when the love of his life is forced to marry someone else.', '1563639828_kabir.jpeg', 0),
 (19, 'Arjun Patiyala', '2019-07-26', 'Diljit Dosanj ,hKriti Sanon', 'Rohit Jugraj', 'Comic difficulties ensue when a tall female journalist falls in love with a short Punjabi man.', '1563639960_arjun.jpeg', 1),
 (23, 'sd', '0', ' Paul Atreides, ', ' Denis Villeneuve', 'kjhlk', '1714932975_P_HO00011079.jpg', 1),
-(24, 'boys kill worlds', '2024-05-24', 'all', 'Mohammed Ragab', 'you     ', '1715017938_we.jpg', 1);
+(24, 'boys kill worlds', '2024-05-24', 'all', 'Mohammed Ragab', 'you     ', '1715017938_we.jpg', 1),
+(26, 'venom 3', '2024-10-15', 'Tom Hardy( Eddie Brock)', 'Kelly Marcel', 'Venom: The Last Dance is an upcoming American superhero film featuring the Marvel Comics character Venom, produced by Columbia Pictures in association with Marvel, and distributed by Sony Pictures ', '1715208638_Venom 3.jpg', 1),
+(27, 'Deadpool and wolverine', '2024-11-13', 'Ryan Reynolds Wade Wilson', 'Shawn Levy', 'Deadpool & Wolverine is an upcoming American superhero film based on the Marvel Comics characters Deadpool and Wolverine, produced by Marvel Studios, Maximum Effort,', '1715208962_7cvdeitoAiDtcpWXxOTAb44OFNn.jpg', 0);
 
 -- --------------------------------------------------------
 
@@ -213,7 +246,8 @@ INSERT INTO `register` (`r_id`, `r_nm`, `r_age`, `r_gender`, `r_mno`, `r_email`,
 (8, 'Pd wap', '22', 'Male', '1482848289', 'pdwapofficial@gmail.com', '123123', 1559736049, 1),
 (9, 'Darshak', '22', 'Male', '9714007824', 'pdwapinc@gmail.com', '123123', 1559738573, 1),
 (10, 'pradip swer', '19', 'Male', '9912456780', 'p@gmail.com', '121212', 1563636916, 1),
-(11, 'Mohamed ragab salama', '77', 'Male', '1027886935', 'mo@gmail.com', '0plm0plM', 1714927703, 1);
+(11, 'Mohamed ragab salama', '77', 'Male', '1027886935', 'mo@gmail.com', '0plm0plM', 1714927703, 1),
+(13, 'HASSANIN', '21', 'Male', '9856224542', 'midohegazy585@gmail.com', '1234567', 1715192446, 1);
 
 -- --------------------------------------------------------
 
@@ -889,7 +923,103 @@ INSERT INTO `seat` (`seat_id`, `seat_row`, `seat_col`, `seat_show`, `seat_uid`) 
 (621, 'H', 3, 60, 0),
 (622, 'H', 4, 60, 0),
 (623, 'H', 5, 60, 0),
-(624, 'H', 6, 60, 0);
+(624, 'H', 6, 60, 0),
+(625, 'A', 1, 61, 0),
+(626, 'A', 2, 61, 0),
+(627, 'A', 3, 61, 0),
+(628, 'A', 4, 61, 0),
+(629, 'A', 5, 61, 0),
+(630, 'A', 6, 61, 0),
+(631, 'B', 1, 61, 0),
+(632, 'B', 2, 61, 0),
+(633, 'B', 3, 61, 0),
+(634, 'B', 4, 61, 0),
+(635, 'B', 5, 61, 0),
+(636, 'B', 6, 61, 0),
+(637, 'C', 1, 61, 0),
+(638, 'C', 2, 61, 0),
+(639, 'C', 3, 61, 0),
+(640, 'C', 4, 61, 0),
+(641, 'C', 5, 61, 0),
+(642, 'C', 6, 61, 0),
+(643, 'D', 1, 61, 0),
+(644, 'D', 2, 61, 0),
+(645, 'D', 3, 61, 0),
+(646, 'D', 4, 61, 0),
+(647, 'D', 5, 61, 0),
+(648, 'D', 6, 61, 0),
+(649, 'E', 1, 61, 0),
+(650, 'E', 2, 61, 0),
+(651, 'E', 3, 61, 0),
+(652, 'E', 4, 61, 0),
+(653, 'E', 5, 61, 0),
+(654, 'E', 6, 61, 0),
+(655, 'F', 1, 61, 0),
+(656, 'F', 2, 61, 0),
+(657, 'F', 3, 61, 0),
+(658, 'F', 4, 61, 0),
+(659, 'F', 5, 61, 0),
+(660, 'F', 6, 61, 0),
+(661, 'G', 1, 61, 0),
+(662, 'G', 2, 61, 0),
+(663, 'G', 3, 61, 0),
+(664, 'G', 4, 61, 0),
+(665, 'G', 5, 61, 0),
+(666, 'G', 6, 61, 0),
+(667, 'H', 1, 61, 0),
+(668, 'H', 2, 61, 0),
+(669, 'H', 3, 61, 0),
+(670, 'H', 4, 61, 0),
+(671, 'H', 5, 61, 0),
+(672, 'H', 6, 61, 0),
+(673, 'A', 1, 62, 0),
+(674, 'A', 2, 62, 0),
+(675, 'A', 3, 62, 0),
+(676, 'A', 4, 62, 0),
+(677, 'A', 5, 62, 0),
+(678, 'A', 6, 62, 0),
+(679, 'B', 1, 62, 0),
+(680, 'B', 2, 62, 0),
+(681, 'B', 3, 62, 0),
+(682, 'B', 4, 62, 0),
+(683, 'B', 5, 62, 0),
+(684, 'B', 6, 62, 0),
+(685, 'C', 1, 62, 0),
+(686, 'C', 2, 62, 0),
+(687, 'C', 3, 62, 0),
+(688, 'C', 4, 62, 0),
+(689, 'C', 5, 62, 0),
+(690, 'C', 6, 62, 0),
+(691, 'D', 1, 62, 0),
+(692, 'D', 2, 62, 0),
+(693, 'D', 3, 62, 0),
+(694, 'D', 4, 62, 0),
+(695, 'D', 5, 62, 0),
+(696, 'D', 6, 62, 0),
+(697, 'E', 1, 62, 0),
+(698, 'E', 2, 62, 0),
+(699, 'E', 3, 62, 0),
+(700, 'E', 4, 62, 0),
+(701, 'E', 5, 62, 0),
+(702, 'E', 6, 62, 0),
+(703, 'F', 1, 62, 0),
+(704, 'F', 2, 62, 0),
+(705, 'F', 3, 62, 0),
+(706, 'F', 4, 62, 0),
+(707, 'F', 5, 62, 0),
+(708, 'F', 6, 62, 0),
+(709, 'G', 1, 62, 0),
+(710, 'G', 2, 62, 0),
+(711, 'G', 3, 62, 0),
+(712, 'G', 4, 62, 0),
+(713, 'G', 5, 62, 0),
+(714, 'G', 6, 62, 0),
+(715, 'H', 1, 62, 0),
+(716, 'H', 2, 62, 0),
+(717, 'H', 3, 62, 0),
+(718, 'H', 4, 62, 0),
+(719, 'H', 5, 62, 0),
+(720, 'H', 6, 62, 0);
 
 -- --------------------------------------------------------
 
@@ -919,7 +1049,9 @@ INSERT INTO `shows` (`show_id`, `show_m`, `show_t`, `show_s`, `show_time`, `show
 (59, 19, 11, 22, '12:54', '2024-05-14', 500, 1, 42, '6638a7e5e6f58'),
 (58, 24, 13, 17, '16:49', '2024-05-22', 300, 1, 42, '6638a7bd1fb85'),
 (57, 17, 14, 23, '12:46', '2024-05-30', 200, 1, 42, '6638a61f69c56'),
-(56, 24, 10, 12, '12:39', '2024-05-15', 230, 1, 48, '6638a479c531b');
+(56, 24, 10, 12, '12:39', '2024-05-15', 230, 1, 48, '6638a479c531b'),
+(61, 28, 10, 12, '18:39', '2024-11-29', 100, 1, 48, '663c0cb4bda53'),
+(62, 26, 11, 22, '18:42', '2024-10-31', 140, 1, 48, '663c0cd9e0c6d');
 
 -- --------------------------------------------------------
 
@@ -1026,7 +1158,7 @@ ALTER TABLE `theatre`
 -- AUTO_INCREMENT for table `activity`
 --
 ALTER TABLE `activity`
-  MODIFY `ac_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=128;
+  MODIFY `ac_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=131;
 
 --
 -- AUTO_INCREMENT for table `admin`
@@ -1050,7 +1182,7 @@ ALTER TABLE `contact`
 -- AUTO_INCREMENT for table `movies`
 --
 ALTER TABLE `movies`
-  MODIFY `m_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `m_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `receipt`
@@ -1062,7 +1194,7 @@ ALTER TABLE `receipt`
 -- AUTO_INCREMENT for table `register`
 --
 ALTER TABLE `register`
-  MODIFY `r_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `r_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `screen`
@@ -1074,13 +1206,13 @@ ALTER TABLE `screen`
 -- AUTO_INCREMENT for table `seat`
 --
 ALTER TABLE `seat`
-  MODIFY `seat_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=625;
+  MODIFY `seat_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=721;
 
 --
 -- AUTO_INCREMENT for table `shows`
 --
 ALTER TABLE `shows`
-  MODIFY `show_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
+  MODIFY `show_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 
 --
 -- AUTO_INCREMENT for table `theatre`
