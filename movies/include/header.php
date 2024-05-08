@@ -74,7 +74,7 @@ error_reporting(0);
                     <!-- Mega Menu -->
 					<li class="dropdown w3_megamenu-fw"><a href="movies.php"  class="dropdown-toggle">Movies</a>
                     </li>
-					<li class="dropdown w3_megamenu-fw"><a href="food.php"  class="dropdown-toggle">Pre_Order_FOOD</a>
+					<li class="dropdown w3_megamenu-fw"><a href="foodmenu.php"  class="dropdown-toggle">Pre_Order_FOOD</a>
                     </li>
 					<li class="dropdown"><a href="contact.php" class="dropdown-toggle">Contact Us</a></li>
        <?php             if(isset($_SESSION['client']['status']))
