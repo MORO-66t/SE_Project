@@ -3,7 +3,7 @@ class Theatre{
     private $t_id;
     private $t_name;
     private $t_city;
-    private function __construct($id=-1){
+    function __construct($id=-1){
         if($id> 0){
         include("../include/config.php");
         $sq="select *  from theatre where t_id=$id ";
