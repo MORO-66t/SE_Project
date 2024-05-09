@@ -3,8 +3,6 @@ include("include/header.php");
 if (!isset($_SESSION['client']['status'])) {
     header('location:login.php');
 }
-$qry2 = mysqli_query($con, "select * from movies where m_id='" . $_SESSION['movie'] . "'");
-$movie = mysqli_fetch_array($qry2);
 ?>
 
 <!DOCTYPE html>
@@ -39,7 +37,7 @@ $movie = mysqli_fetch_array($qry2);
 
                         <div class="card-body">
                             <H3>CHEESYHOTDOG</H3>
-                            <H4>95.00 EGP</H4>
+                            <H4>65.00 EGP</H4>
                         </div>
                     </div>
                 </div>
@@ -148,12 +146,7 @@ $movie = mysqli_fetch_array($qry2);
 
         <div class="FOOD-form-container form">
             <form action="foodmenumanege.php" method="POST">
-                <select name="theatre" id="1" required>
-                    <option value="" disabled selected>THEATRE</option>
-                    <option value="">City Centre Alexandria</option>
-                    <option value="">City Centre Almaza</option>
-                    <option value="">Mall of Egypt</option>
-                </select>
+
                 <select name="HOT_FOOD" id="2">
                     <option value="" disabled selected>HOT_FOOD</option>
                     <option value="CB CHICKEN BURGER">CB CHICKEN BURGER</option>
@@ -174,15 +167,7 @@ $movie = mysqli_fetch_array($qry2);
                     <option value="NACHOS">NACHOS</option>
                     <option value="cutton candy">cutton candy</option>
                 </select>
-
-               
-                <input type="text" name="Moviename" id="4"  required placeholder="Movie Name" >
-                <input placeholder="First Name" type="text" name="fName" id="5" required>
-                <input placeholder="Last Name" type="text" name="lName" id="6" >
-                <input placeholder="Phone Number" type="text" name="pNumber" id="7" required>
-                <input placeholder="email" type="email" name="email" id="8"  required>
-                <button type="submit" value="save" name="submit" class="form-btn">Food Request</button>
-
+                <button type="submit" value="submit">REQUEST FOOD</button>
             </form>
 
             <?php
